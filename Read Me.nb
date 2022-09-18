@@ -1,0 +1,198 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7266,        190]
+NotebookOptionsPosition[      5879,        159]
+NotebookOutlinePosition[      6366,        177]
+CellTagsIndexPosition[      6323,        174]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+   "Calculations", " ", "in", " ", "QED", " ", "using", " ", "Mathematica"}], 
+   " ", "-", " ", 
+   RowBox[{
+   "by", " ", "AryanHi", "\[IndentingNewLine]", "Version", " ", "1.00"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.868703914214153*^9, 3.868703952116776*^9}, {
+  3.868707524157094*^9, 3.8687075300241823`*^9}, {3.8696955035585885`*^9, 
+  3.8696955131974277`*^9}},ExpressionUUID->"474f416a-97a0-43c7-aa48-\
+6b33e30e126a"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Method to Calculate Differential Cross - Sections",
+ FontColor->RGBColor[0.4666666666666667, 0.4666666666666667, 1.]]], "Section",
+ CellChangeTimes->{{3.8687055337422113`*^9, 3.8687055420997696`*^9}, {
+  3.8687075187624283`*^9, 
+  3.8687075225638175`*^9}},ExpressionUUID->"b2c6b297-0411-4d9e-9efd-\
+8a8ec56c0d68"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Methodology", "Subsection"]], "Subsubsection",
+ CellChangeTimes->{{3.8687070157765503`*^9, 
+  3.868707020689381*^9}},ExpressionUUID->"c2610f67-273a-44bc-96f7-\
+617b70e60ebf"],
+
+Cell["\<\
+There are 2 components in Calculating Differential Cross Sections for \
+Scattering Particles- 
+\t1. Amplitude or Matrix Element (M) -
+\t\t\tContains all dynamical (what\[CloseCurlyQuote]s happening in the actual \
+process) information
+\t\t\tDepends on the model we are using
+\t\t\tWe calculate it by drawing the proper Feynman diagrams and evaluating \
+the diagram using the appropriate Feynman rules.
+\t2. Phase Space or Density of final States
+\t\t\tContains all kinematic (overall system properties such as conservation \
+of momentum, statistical factors, etc)
+\t\t\tIndependent of the model we are using
+\t\t\tGiven by Fermi\[CloseCurlyQuote]s Golden Model\
+\>", "Text",
+ CellChangeTimes->{{3.86870457085879*^9, 3.8687047979754496`*^9}, {
+  3.868704930146086*^9, 3.868704982283083*^9}, {3.8687050186838455`*^9, 
+  3.8687051497231617`*^9}, {3.8687051972246575`*^9, 3.8687052554535375`*^9}, {
+  3.868705415664096*^9, 
+  3.8687054169716234`*^9}},ExpressionUUID->"982bd15a-0eca-4ab3-b1a4-\
+f16fd9f1a335"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Comments", "Subsubsection",
+ CellChangeTimes->{{3.8687068860938993`*^9, 3.868706892768034*^9}, {
+  3.868707040714901*^9, 
+  3.8687070407709055`*^9}},ExpressionUUID->"76bc5ff3-c8d1-4868-9ace-\
+c1baeb933645"],
+
+Cell["\<\
+A. Example: The Phase Space part for the 2 - body scattering is a simple \
+result with an explicit expression of\
+\>", "Text",
+ CellChangeTimes->{{3.8687057403178763`*^9, 3.8687057583309407`*^9}, {
+  3.8687058652445803`*^9, 3.868705942725288*^9}, {3.86870602725191*^9, 
+  3.868706072248043*^9}, {3.868706147787792*^9, 3.8687061795995936`*^9}, {
+  3.868706724520529*^9, 3.8687067336816425`*^9}, {3.8687069203526077`*^9, 
+  3.8687069228181734`*^9}, {3.869694692213398*^9, 3.8696946961411147`*^9}, {
+  3.869694890427751*^9, 
+  3.8696949886154475`*^9}},ExpressionUUID->"27479907-e4bd-4bfd-a2ef-\
+f622f583315f"],
+
+Cell[BoxData[
+ RowBox[{"\t\t\t\t", 
+  RowBox[{
+   RowBox[{"D", "[", "\[Theta]", "]"}], " ", "=", " ", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["\[HBar]c", 
+       RowBox[{"8", "\[Pi]"}]], ")"}], "2"], " ", 
+    FractionBox[
+     RowBox[{"S", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"Abs", "[", "M", "]"}], ")"}], "2"]}], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["E", "1"], "+", 
+        SubscriptBox["E", "2"]}], ")"}], "2"]], " ", 
+    FractionBox[
+     RowBox[{"Abs", "[", 
+      SubscriptBox["p", "f"], "]"}], 
+     RowBox[{"Abs", "[", 
+      SubscriptBox["p", "i"], "]"}]]}]}]}]], "Input",
+ CellChangeTimes->{{3.868706162860915*^9, 3.86870638356339*^9}, {
+  3.868706425429389*^9, 3.868706458138319*^9}, {3.868706551933241*^9, 
+  3.8687066872298045`*^9}},ExpressionUUID->"4e01cfd2-6b65-4f17-92f7-\
+6ff04b5e7b76"],
+
+Cell["\<\
+The Phase Space part for more than 2 bodies contain \[OpenCurlyQuote]M \
+(amplitude)\[CloseCurlyQuote] in a form not as simple as above and has to be \
+taken into account.\
+\>", "Text",
+ CellChangeTimes->{
+  3.8696952780150137`*^9},ExpressionUUID->"8691c992-0f69-4d7b-92ca-\
+93f50e69cbb8"],
+
+Cell["\<\
+B. We will be mostly concerned with the amplitude part of the calculation, it \
+is generally much more complicated to evaluate and we will use Mathematica \
+tools to obtain it.\
+\>", "Text",
+ CellChangeTimes->{{3.868706172118344*^9, 3.8687061730228367`*^9}, {
+  3.868706697845302*^9, 3.8687067840660763`*^9}, {3.868706898239971*^9, 
+  3.8687069105721188`*^9}, {3.868707045322042*^9, 3.868707048348175*^9}, {
+  3.868707159580539*^9, 3.868707269943634*^9}, {3.8687073462765503`*^9, 
+  3.8687074048791814`*^9}, {3.869694848475131*^9, 3.869694864291326*^9}, {
+  3.8696949738093796`*^9, 3.8696950269483404`*^9}, {3.869695066079908*^9, 
+  3.8696954482411113`*^9}},ExpressionUUID->"5c14f0b1-fe76-4573-8776-\
+a50756d04973"],
+
+Cell["\<\
+C. Two techniques for doing our calculations for the M in Mathematica:
+\t1. FeynArts and using FCFA command
+\t2. Using Casimir\[CloseCurlyQuote]s trick to convert Integrals into traces \
+of Matrices\
+\>", "Text",
+ CellChangeTimes->{{3.869695259383526*^9, 3.869695263902606*^9}, {
+  3.8696954690023837`*^9, 
+  3.869695472357972*^9}},ExpressionUUID->"d57b7253-95ad-4851-8c30-\
+e2835840bacb"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1152., 579.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+TaggingRules->Association["TryRealOnly" -> False],
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"adc757c3-18e5-41fa-981f-fce646bb39b4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 486, 12, 48, "Input",ExpressionUUID->"474f416a-97a0-43c7-aa48-6b33e30e126a"],
+Cell[CellGroupData[{
+Cell[1069, 36, 337, 5, 67, "Section",ExpressionUUID->"b2c6b297-0411-4d9e-9efd-8a8ec56c0d68"],
+Cell[CellGroupData[{
+Cell[1431, 45, 198, 3, 46, "Subsubsection",ExpressionUUID->"c2610f67-273a-44bc-96f7-617b70e60ebf"],
+Cell[1632, 50, 1014, 20, 219, "Text",ExpressionUUID->"982bd15a-0eca-4ab3-b1a4-f16fd9f1a335"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2683, 75, 212, 4, 45, "Subsubsection",ExpressionUUID->"76bc5ff3-c8d1-4868-9ace-c1baeb933645"],
+Cell[2898, 81, 616, 11, 35, "Text",ExpressionUUID->"27479907-e4bd-4bfd-a2ef-f622f583315f"],
+Cell[3517, 94, 902, 27, 51, "Input",ExpressionUUID->"4e01cfd2-6b65-4f17-92f7-6ff04b5e7b76"],
+Cell[4422, 123, 299, 7, 35, "Text",ExpressionUUID->"8691c992-0f69-4d7b-92ca-93f50e69cbb8"],
+Cell[4724, 132, 725, 12, 58, "Text",ExpressionUUID->"5c14f0b1-fe76-4573-8776-a50756d04973"],
+Cell[5452, 146, 399, 9, 81, "Text",ExpressionUUID->"d57b7253-95ad-4851-8c30-e2835840bacb"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
